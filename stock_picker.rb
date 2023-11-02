@@ -7,11 +7,11 @@ def stock_picker(prices)
   max_profit = 0
   prices.each_with_index do |price, index|
     for i in index + 1...prices.length
-      if prices[i] - price > max_profit
-        max_profit = prices[i] - price
-        min_index = index
-        max_index = i
-      end
+      next unless prices[i] - price > max_profit
+
+      max_profit = prices[i] - price
+      min_index = index
+      max_index = i
     end
   end
 

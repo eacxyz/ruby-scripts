@@ -5,11 +5,11 @@ def bubble_sort(array)
   while not_sorted == true
     not_sorted = false
     array.each_with_index do |value, index|
-      if index + 1 < array.length && value > array[index + 1]
-        array[index] = array[index + 1]
-        array[index + 1] = value
-        not_sorted = true
-      end
+      next unless index + 1 < array.length && value > array[index + 1]
+
+      array[index] = array[index + 1]
+      array[index + 1] = value
+      not_sorted = true
     end
   end
   array
